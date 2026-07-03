@@ -474,6 +474,74 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
 .journey__foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.2rem;margin-top:2.6rem}
 .journey__note{font-size:.68rem;color:var(--muted);letter-spacing:.04em;text-align:center;margin-top:1.4rem}
 
+/* ---------- Journey: drive-times + connecting roads ---------- */
+.dt{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.8rem}
+.dt__card{background:#fff;border:1px solid var(--line);padding:1.7rem 1.1rem;text-align:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease)}
+.dt__card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:transparent}
+.dt__t{font-family:var(--font-serif);font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:600;color:var(--ink);line-height:1}
+.dt__t .u{color:var(--red);font-size:.42em;vertical-align:super;margin-left:.12em;font-weight:500}
+.dt__l{margin-top:.6rem;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);line-height:1.4}
+.roads{margin-top:2.2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.road{display:flex;gap:.85rem;align-items:flex-start;padding:1.1rem 1.25rem;background:rgba(255,255,255,.7);border-left:2px solid var(--red)}
+.road .rn{font-family:var(--font-serif);font-size:1.35rem;font-weight:700;color:var(--red);line-height:1;flex:none}
+.road .rt{font-weight:500;color:var(--ink);font-size:.95rem;line-height:1.25}
+.road .rs{font-size:.74rem;color:var(--muted);letter-spacing:.03em}
+.bypass{margin-top:1.2rem;text-align:center;font-size:.9rem;color:var(--ink-soft)}
+.bypass b{color:var(--red);font-weight:600}
+
+/* ============================================================
+   NEIGHBOURHOOD  (What's Nearby — POIs, schools, healthcare)
+   ============================================================ */
+.nb{background:var(--paper-2)}
+.nb__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+.poi{background:#fff;padding:2rem 1.9rem;box-shadow:var(--shadow-sm);border-top:2px solid transparent;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease)}
+.poi:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-top-color:var(--red)}
+.poi__cat{display:flex;align-items:center;gap:.8rem;margin-bottom:1.3rem}
+.poi__ic{width:40px;height:40px;flex:none;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}
+.poi__ic svg{width:20px;height:20px;stroke:var(--red);stroke-width:1.5;fill:none}
+.poi__cat h3{font-size:1.2rem;color:var(--ink);font-weight:600}
+.poi__list{list-style:none;display:grid;gap:.9rem}
+.poi__list li{border-bottom:1px solid var(--line);padding-bottom:.9rem}
+.poi__list li:last-child{border-bottom:0;padding-bottom:0}
+.poi__n{display:flex;justify-content:space-between;gap:.6rem;align-items:baseline}
+.poi__n .nm{font-size:.96rem;color:var(--ink);font-weight:500}
+.poi__n .tm{font-size:.72rem;letter-spacing:.06em;color:var(--red);white-space:nowrap;font-weight:500}
+.poi__s{font-size:.78rem;color:var(--muted);margin-top:.2rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.poi__star{color:#c8991f;font-weight:600;letter-spacing:.02em}
+
+/* ============================================================
+   FUTURE GROWTH  (appreciation timeline)
+   ============================================================ */
+.fg{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.fg::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 100% at 80% 0,rgba(225,46,20,.14),transparent 60%)}
+.fg .container{position:relative}
+.fg__head .kicker{color:var(--red)}
+.fg__head h2{color:#fff;font-size:clamp(2.2rem,4.6vw,3.4rem);margin:1rem 0}
+.fg__head p{color:rgba(255,255,255,.6);max-width:52ch}
+.fg__time{margin-top:3.2rem;display:grid;gap:0;position:relative}
+.fg__time::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:rgba(255,255,255,.14)}
+.fg__item{position:relative;padding:0 0 2rem 3rem}
+.fg__item:last-child{padding-bottom:0}
+.fg__dot{position:absolute;left:0;top:4px;width:24px;height:24px;border-radius:50%;border:2px solid var(--red);background:var(--ink);display:grid;place-items:center}
+.fg__dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--red)}
+.fg__yr{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:600}
+.fg__t{font-family:var(--font-serif);font-size:1.5rem;color:#fff;font-weight:500;margin:.25rem 0 .4rem}
+.fg__d{color:rgba(255,255,255,.62);font-size:.94rem;max-width:60ch}
+
+/* ============================================================
+   BUY WITH CONFIDENCE  (developer · legal · payment · scarcity)
+   ============================================================ */
+.assure{background:var(--paper)}
+.assure__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:3rem}
+.pillar{background:#fff;padding:2.1rem 1.7rem;box-shadow:var(--shadow-sm);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.pillar:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.pillar__ic{width:48px;height:48px;color:var(--red);margin-bottom:1.2rem}
+.pillar__ic svg{width:100%;height:100%;stroke:var(--red);stroke-width:1.3;fill:none}
+.pillar h3{font-size:1.18rem;color:var(--ink);font-weight:600;margin-bottom:.6rem}
+.pillar p{font-size:.86rem;color:var(--muted);line-height:1.55}
+.pillar p b{color:var(--ink-soft);font-weight:600}
+.assure__note{margin-top:2rem;font-size:.72rem;color:var(--muted);text-align:center;letter-spacing:.03em}
+
 /* ============================================================
    ENQUIRE
    ============================================================ */
@@ -632,6 +700,21 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
   .hl__card{padding:2rem 1.4rem}
   .res__card h3{font-size:1.7rem}
 }
+/* ---------- new buyer-detail sections: responsive ---------- */
+@media(max-width:1024px){
+  .nb__grid{grid-template-columns:1fr 1fr}
+  .assure__grid{grid-template-columns:1fr 1fr}
+  .dt{grid-template-columns:repeat(2,1fr)}
+  .roads{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nb__grid{grid-template-columns:1fr}
+  .assure__grid{grid-template-columns:1fr}
+  .road{padding:.95rem 1.05rem}
+  .fg__item{padding-left:2.6rem}
+  .nav__links{gap:1.5rem}
+}
+@media(min-width:861px){ .nav__links{gap:clamp(1.1rem,1.7vw,2rem)} }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition-duration:.01ms!important}
   .reveal,.mask-line>span,.hero__kicker,.hero__phase,.hero__sub,.hero__meta,.scroll-cue,
@@ -664,13 +747,12 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
     </span>
   </a>
   <div class="nav__links" id="navLinks">
-    <a href="#film">The Film</a>
-    <a href="#highlights">Highlights</a>
+    <a href="#film">Film</a>
     <a href="#residences">Residences</a>
     <a href="#plans">Floor Plans</a>
-    <a href="#specs">Specifications</a>
-    <a href="#location">Location</a>
+    <a href="#neighbourhood">Nearby</a>
     <a href="#journey">Journey</a>
+    <a href="#growth">Growth</a>
     <a href="#enquire" class="nav__cta" style="display:inline-block">Register Interest</a>
   </div>
   <div class="nav__burger" id="burger" aria-label="Menu" role="button" tabindex="0">
@@ -729,6 +811,7 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
         <h2 class="intro__title lightup" data-lightup>Where every home is a <em>vision realised</em>.</h2>
         <p>Perched on the gentle rise of Taman Wawasan Mahandoi in Donggongon, Penampang, <strong>Vision Garden <span class="cjk">築夢園</span></strong> is a masterplanned community that has grown, phase by phase, into one of the district's most sought-after addresses.</p>
         <p>Phase 5 crowns the development with just <strong>43 double storey terrace houses</strong> — architecturally sculpted gable roofs, generous 20-foot frontages, and light-filled interiors designed for the way modern Sabahan families truly live. Moments from the Pan Borneo Highway, yet wrapped in green.</p>
+        <p>And it is rooted in place: Penampang is the cultural heartland of the <strong>Kadazan</strong> people, where the weekly <em>Tamu</em> market and the rhythms of Donggongon town have anchored community life for generations — a neighbourhood with a genuine sense of belonging.</p>
         <div style="margin-top:2rem"><a href="#residences" class="btn btn--line">Explore the Residences</a></div>
       </div>
       <div class="intro__aside framed reveal d2" data-parallax="-0.05">
@@ -913,6 +996,86 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
   </div>
 </section>
 
+<!-- ================= NEIGHBOURHOOD ================= -->
+<section class="section nb" id="neighbourhood" data-scene="THE NEIGHBOURHOOD">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow-row" style="justify-content:center"><span class="rule"></span><span class="kicker">The Neighbourhood</span><span class="rule"></span></div>
+      <h2 class="section-title">Everything for daily life,<br>a few minutes from your door.</h2>
+      <p class="lead" style="margin:1.2rem auto 0;text-align:center">Vision Garden sits in the heart of Donggongon, Penampang — the established civic and retail centre of the district, with malls, markets, schools and healthcare all close by.</p>
+    </div>
+    <div class="nb__grid">
+      <!-- Shopping & lifestyle -->
+      <div class="poi reveal">
+        <div class="poi__cat">
+          <span class="poi__ic"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></span>
+          <h3>Shopping &amp; Lifestyle</h3>
+        </div>
+        <ul class="poi__list">
+          <li><div class="poi__n"><span class="nm">ITCC Penampang</span><span class="tm">≈ 5 min</span></div><div class="poi__s"><span class="poi__star">★ 4.2</span><span>Penampang's largest mall · hotel &amp; offices</span></div></li>
+          <li><div class="poi__n"><span class="nm">Megalong Mall</span><span class="tm">≈ 6 min</span></div><div class="poi__s"><span class="poi__star">★ 3.8</span><span>Supermarket, cinema &amp; daily needs</span></div></li>
+        </ul>
+      </div>
+      <!-- Markets & local life -->
+      <div class="poi reveal d1">
+        <div class="poi__cat">
+          <span class="poi__ic"><svg viewBox="0 0 24 24"><path d="M4 9h16l-1 4H5L4 9z"/><path d="M5 13v6h14v-6M4 9l2-4h12l2 4"/></svg></span>
+          <h3>Markets &amp; Local Life</h3>
+        </div>
+        <ul class="poi__list">
+          <li><div class="poi__n"><span class="nm">Donggongon Tamu</span><span class="tm">≈ 3 min</span></div><div class="poi__s"><span class="poi__star">★ 4.4</span><span>Traditional market, every Thu &amp; Fri</span></div></li>
+          <li><div class="poi__n"><span class="nm">Donggongon Town Centre</span><span class="tm">≈ 3 min</span></div><div class="poi__s"><span>Banks, eateries, groceries &amp; services</span></div></li>
+        </ul>
+      </div>
+      <!-- Education -->
+      <div class="poi reveal d2">
+        <div class="poi__cat">
+          <span class="poi__ic"><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></span>
+          <h3>Schools Nearby</h3>
+        </div>
+        <ul class="poi__list">
+          <li><div class="poi__n"><span class="nm">SM St. Michael, Penampang</span><span class="tm">Donggongon</span></div><div class="poi__s"><span>Historic secondary school, est. 1890</span></div></li>
+          <li><div class="poi__n"><span class="nm">SJK(C) Yue Min</span><span class="tm">Penampang</span></div><div class="poi__s"><span>Chinese-medium primary school</span></div></li>
+        </ul>
+      </div>
+      <!-- Healthcare -->
+      <div class="poi reveal">
+        <div class="poi__cat">
+          <span class="poi__ic"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" stroke-width="2"/><rect x="3" y="3" width="18" height="18" rx="3" stroke-width="1.3"/></svg></span>
+          <h3>Healthcare</h3>
+        </div>
+        <ul class="poi__list">
+          <li><div class="poi__n"><span class="nm">Donggongon Clinics</span><span class="tm">≈ 3 min</span></div><div class="poi__s"><span>GP &amp; 24-hour clinics in town</span></div></li>
+          <li><div class="poi__n"><span class="nm">Hospitals in Greater KK</span><span class="tm">≈ 20 min</span></div><div class="poi__s"><span>Public &amp; private hospitals within reach</span></div></li>
+        </ul>
+      </div>
+      <!-- Connectivity -->
+      <div class="poi reveal d1">
+        <div class="poi__cat">
+          <span class="poi__ic"><svg viewBox="0 0 24 24"><path d="M4 17h16M6 17V9l6-4 6 4v8"/><path d="M4 17l2 3M20 17l-2 3"/></svg></span>
+          <h3>Getting Around</h3>
+        </div>
+        <ul class="poi__list">
+          <li><div class="poi__n"><span class="nm">KK City Centre</span><span class="tm">≈ 20 min</span></div><div class="poi__s"><span>Via the Penampang Bypass</span></div></li>
+          <li><div class="poi__n"><span class="nm">KK Int'l Airport (BKI)</span><span class="tm">≈ 15 min</span></div><div class="poi__s"><span>An easy run to your gate</span></div></li>
+        </ul>
+      </div>
+      <!-- Community -->
+      <div class="poi reveal d2">
+        <div class="poi__cat">
+          <span class="poi__ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M14.5 20c0-2 1.5-3.5 3.5-3.5s3.5 1.3 3.5 3"/></svg></span>
+          <h3>Community &amp; Culture</h3>
+        </div>
+        <ul class="poi__list">
+          <li><div class="poi__n"><span class="nm">Kadazan Heartland</span><span class="tm">Penampang</span></div><div class="poi__s"><span>The cultural home of the Kadazan people</span></div></li>
+          <li><div class="poi__n"><span class="nm">An Established Address</span><span class="tm">Phases 1–3A</span></div><div class="poi__s"><span>A lived-in, low-density neighbourhood</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <p class="assure__note reveal">Distances and drive times are approximate and indicative only; ratings shown are third-party (Google) and may change over time.</p>
+  </div>
+</section>
+
 <!-- ================= THE JOURNEY ================= -->
 <section class="section journey" id="journey" data-scene="THE JOURNEY">
   <div class="container">
@@ -949,6 +1112,22 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
         <span class="pin"></span><span class="lab"><span class="t">Vision Garden</span><span class="s">Taman Wawasan Mahandoi</span></span></div>
     </div>
 
+    <!-- Drive times from Vision Garden -->
+    <div class="dt reveal d1">
+      <div class="dt__card"><div class="dt__t" data-count="20">20<span class="u">min</span></div><div class="dt__l">Kota Kinabalu<br>City Centre</div></div>
+      <div class="dt__card"><div class="dt__t" data-count="15">15<span class="u">min</span></div><div class="dt__l">KK International<br>Airport (BKI)</div></div>
+      <div class="dt__card"><div class="dt__t" data-count="5">5<span class="u">min</span></div><div class="dt__l">ITCC Penampang<br>Mall &amp; Offices</div></div>
+      <div class="dt__card"><div class="dt__t" data-count="3">3<span class="u">min</span></div><div class="dt__l">Donggongon<br>Town Centre</div></div>
+    </div>
+
+    <!-- Three connecting roads -->
+    <div class="roads reveal d1">
+      <div class="road"><span class="rn">1</span><div><div class="rt">Pan Borneo Highway</div><div class="rs">The main coastal artery</div></div></div>
+      <div class="road"><span class="rn">2</span><div><div class="rt">Jalan Ramayah</div><div class="rs">Direct into Donggongon</div></div></div>
+      <div class="road"><span class="rn">3</span><div><div class="rt">Jalan Datuk Mojuntion</div><div class="rs">Quiet secondary access</div></div></div>
+    </div>
+    <p class="bypass reveal">Three separate roads in — and the <b>Penampang Bypass</b> links you straight to ITCC → Lintas → KK city, skipping the old-town congestion.</p>
+
     <div class="journey__foot reveal d2">
       <a class="btn btn--solid" href="https://www.google.com/maps/dir/?api=1&amp;origin=Kota+Kinabalu+City,+Sabah&amp;destination=Taman+Wawasan+Mahandoi+Vision+Garden,+Donggongon,+Penampang" target="_blank" rel="noopener">
         Open Directions in Google Maps
@@ -957,6 +1136,76 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
       <a class="btn btn--line" href="#enquire">Book a Show-Unit Viewing</a>
     </div>
     <p class="journey__note reveal">Route, distance and travel time are approximate and indicative only, and vary with traffic and departure point.</p>
+  </div>
+</section>
+
+<!-- ================= FUTURE GROWTH ================= -->
+<section class="section fg" id="growth" data-scene="FUTURE GROWTH">
+  <div class="container">
+    <div class="fg__head reveal">
+      <div class="eyebrow-row"><span class="rule"></span><span class="kicker">Growth &amp; Potential</span></div>
+      <h2>A home today, in a district<br>built for tomorrow.</h2>
+      <p>Penampang is one of Greater Kota Kinabalu's fastest-growing districts — and the infrastructure reshaping the west coast runs right past your doorstep.</p>
+    </div>
+    <div class="fg__time">
+      <div class="fg__item reveal">
+        <span class="fg__dot"></span>
+        <div class="fg__yr">Now Rising</div>
+        <div class="fg__t">Pan Borneo Highway</div>
+        <div class="fg__d">The KK–Kimanis stretch of Sabah's landmark highway — more than 200&nbsp;km of upgraded coastal road — is in its final stages, tightening connections along the entire west coast.</div>
+      </div>
+      <div class="fg__item reveal d1">
+        <span class="fg__dot"></span>
+        <div class="fg__yr">In Progress</div>
+        <div class="fg__t">KK Outer Ring Road · Putatan–Inanam</div>
+        <div class="fg__d">The Putatan–Inanam link threads through Greater KK to ease congestion across Kota Kinabalu, Penampang and Inanam — placing Vision Garden beside the region's next connectivity backbone.</div>
+      </div>
+      <div class="fg__item reveal d2">
+        <span class="fg__dot"></span>
+        <div class="fg__yr">Established &amp; Growing</div>
+        <div class="fg__t">A Maturing Township</div>
+        <div class="fg__d">Donggongon has grown from market town to the civic heart of Penampang — with ITCC, Megalong and a widening ring of amenities anchoring long-term demand for well-built family homes.</div>
+      </div>
+      <div class="fg__item reveal d3">
+        <span class="fg__dot"></span>
+        <div class="fg__yr">Proven On-Site</div>
+        <div class="fg__t">Vision Garden, Phase by Phase</div>
+        <div class="fg__d">Phases 1, 2 and 3A are already delivered and lived-in. Phase 5 joins a masterplan that has steadily matured into one of the district's most recognised addresses.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUY WITH CONFIDENCE ================= -->
+<section class="section assure" id="assurance" data-scene="BUY WITH CONFIDENCE">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow-row" style="justify-content:center"><span class="rule"></span><span class="kicker">Buy With Confidence</span><span class="rule"></span></div>
+      <h2 class="section-title">A purchase built on<br>solid ground.</h2>
+    </div>
+    <div class="assure__grid">
+      <div class="pillar reveal">
+        <div class="pillar__ic"><svg viewBox="0 0 48 48"><path d="M8 40V18l16-10 16 10v22"/><path d="M8 40h32M18 40V28h12v12"/></svg></div>
+        <h3>A Delivered Track Record</h3>
+        <p>By <b>Sri Moraine Sdn&nbsp;Bhd</b> — the developer behind Vision Garden's earlier phases. <b>Phases 1, 2 &amp; 3A</b> are already completed and occupied.</p>
+      </div>
+      <div class="pillar reveal d1">
+        <div class="pillar__ic"><svg viewBox="0 0 48 48"><path d="M24 5l16 6v10c0 11-7 18-16 22C15 39 8 32 8 21V11l16-6z"/><path d="M17 24l5 5 9-10"/></svg></div>
+        <h3>Legally Protected</h3>
+        <p><b>99-year leasehold</b>, a licensed development (Licence 800-1/1/953/02619), with all deposits paid into a protected <b>RHB Housing Development Account</b>.</p>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="pillar__ic"><svg viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="24" rx="3"/><path d="M6 20h36M13 29h8"/></svg></div>
+        <h3>Clear Pricing</h3>
+        <p>From <b>RM 838,000</b> to RM 990,000, with a <b>30% Bumiputra allocation</b> and a <b>5% discount</b> — no hidden surprises.</p>
+      </div>
+      <div class="pillar reveal d3">
+        <div class="pillar__ic"><svg viewBox="0 0 48 48"><path d="M24 6l4 8 9 1-6.5 6.5L32 30l-8-4-8 4 1.5-8.5L11 15l9-1 4-8z"/></svg></div>
+        <h3>Genuinely Limited</h3>
+        <p>Just <b>43 homes</b> in Phase 5, on a secured, gated street with M.S. front gates and boundary walls — a rare, low-density collection.</p>
+      </div>
+    </div>
+    <p class="assure__note reveal">Licence &amp; permit particulars, tenure and payment terms are set out in full in the legal notice below and remain subject to the Sale &amp; Purchase Agreement.</p>
   </div>
 </section>
 
@@ -1035,9 +1284,10 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
         <a href="#film">The Film</a>
         <a href="#residences">The Residences</a>
         <a href="#plans">Floor Plans</a>
-        <a href="#specs">Specifications</a>
-        <a href="#location">Location</a>
+        <a href="#neighbourhood">The Neighbourhood</a>
         <a href="#journey">The Journey</a>
+        <a href="#growth">Growth &amp; Potential</a>
+        <a href="#assurance">Buy With Confidence</a>
         <a href="#enquire">Register Interest</a>
       </div>
     </div>
