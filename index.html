@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vision Garden · Phase 5 — Double Storey Terrace Houses | Donggongon, Penampang</title>
+<meta name="description" content="Vision Garden Phase 5 (築夢園) — a limited collection of 43 double storey terrace houses in Taman Wawasan Mahandoi, Donggongon, Penampang, Sabah. 20ft frontage, 4 bedrooms, from RM 838,000. By Sri Moraine Sdn Bhd." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   VISION GARDEN — PHASE 5  |  Developer promotional site
+   Palette sampled from brochure. Brand red #E12E14.
+   ============================================================ */
+:root{
+  --red:#E12E14;
+  --red-deep:#B72410;
+  --ink:#1d1d1f;
+  --ink-soft:#4a4a4d;
+  --muted:#8a867f;
+  --line:#e6e0d6;
+  --paper:#faf8f4;
+  --paper-2:#f2ede4;
+  --cream:#efe9df;
+  --sky:#cfe0ea;
+  --sky-deep:#9fbccd;
+  --sage:#8fa389;
+  --white:#ffffff;
+  --shadow-sm:0 2px 10px rgba(30,25,20,.06);
+  --shadow-md:0 18px 50px -20px rgba(30,25,20,.28);
+  --shadow-lg:0 40px 90px -30px rgba(20,20,25,.45);
+  --font-serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --font-sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --maxw:1240px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  font-family:var(--font-sans);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.65;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--red);color:#fff}
+
+/* ---------- typographic helpers ---------- */
+.kicker{
+  font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;
+  font-weight:500;color:var(--red);
+}
+.kicker--muted{color:var(--muted)}
+h1,h2,h3{font-family:var(--font-serif);font-weight:500;line-height:1.05;letter-spacing:.01em}
+.display{font-size:clamp(3.2rem,9vw,7.5rem);font-weight:500}
+.section-title{font-size:clamp(2.2rem,4.6vw,3.6rem);color:var(--ink)}
+.lead{font-size:clamp(1.05rem,1.5vw,1.22rem);color:var(--ink-soft);font-weight:300;max-width:56ch}
+.container{width:min(var(--maxw),92vw);margin-inline:auto}
+.section{padding:clamp(5rem,10vw,9rem) 0;position:relative}
+.center{text-align:center}
+.eyebrow-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.eyebrow-row .rule{height:1px;width:54px;background:var(--red);opacity:.7}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--font-sans);font-size:.8rem;letter-spacing:.18em;
+  text-transform:uppercase;font-weight:500;
+  padding:1.05rem 2.1rem;border:1px solid transparent;cursor:pointer;
+  transition:all .45s var(--ease);border-radius:2px;
+}
+.btn--solid{background:var(--red);color:#fff}
+.btn--solid:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(225,46,20,.6)}
+.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn--ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.btn--dark{background:var(--ink);color:#fff}
+.btn--dark:hover{background:#000;transform:translateY(-2px)}
+.btn--line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn--line:hover{background:var(--ink);color:#fff}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem clamp(1.2rem,4vw,3rem);
+  transition:all .5s var(--ease);
+}
+.nav.scrolled{
+  background:rgba(250,248,244,.92);backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--line);padding-top:.9rem;padding-bottom:.9rem;
+}
+.brand{display:flex;align-items:center;gap:.85rem}
+.brand__mark{width:38px;height:38px;background:var(--red);display:grid;place-items:center;flex:none}
+.brand__mark img{width:30px}
+.brand__txt{line-height:1.05;color:#fff;transition:color .5s var(--ease)}
+.nav.scrolled .brand__txt{color:var(--ink)}
+.brand__name{font-family:var(--font-serif);font-size:1.15rem;letter-spacing:.14em;font-weight:600}
+.brand__sub{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;opacity:.8}
+.nav__links{display:flex;align-items:center;gap:2.1rem}
+.nav__links a{
+  font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;
+  color:rgba(255,255,255,.9);transition:color .3s;position:relative;
+}
+.nav.scrolled .nav__links a{color:var(--ink-soft)}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--red);transition:width .35s var(--ease)}
+.nav__links a:hover::after{width:100%}
+.nav__links a:hover{color:var(--red)}
+.nav__cta{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  padding:.7rem 1.4rem;border:1px solid rgba(255,255,255,.6);color:#fff;transition:all .4s var(--ease)
+}
+.nav.scrolled .nav__cta{border-color:var(--red);color:var(--red)}
+.nav__cta:hover{background:var(--red);color:#fff!important;border-color:var(--red)}
+.nav__burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.nav__burger span{width:26px;height:2px;background:#fff;transition:.4s var(--ease)}
+.nav.scrolled .nav__burger span{background:var(--ink)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:flex-end;
+  color:#fff;overflow:hidden;
+}
+.hero__bg{position:absolute;inset:0;z-index:-2}
+.hero__bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 8s var(--ease)}
+.hero.ready .hero__bg img{transform:scale(1)}
+.hero__scrim{position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(20,25,30,.55) 0%,rgba(20,25,30,.08) 28%,rgba(20,25,30,.18) 55%,rgba(15,18,22,.82) 100%);}
+.hero__inner{width:min(var(--maxw),92vw);margin:0 auto;padding-bottom:clamp(3rem,7vw,6rem)}
+.hero__kicker{color:#fff;opacity:.92;margin-bottom:1.6rem}
+.hero__kicker span{color:var(--red);font-weight:600}
+.hero h1{font-size:clamp(3.6rem,11vw,9.5rem);line-height:.9;letter-spacing:.01em;text-shadow:0 2px 40px rgba(0,0,0,.3)}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero__phase{
+  display:inline-flex;align-items:baseline;gap:.9rem;margin-top:.4rem;
+  font-family:var(--font-serif);font-size:clamp(1.4rem,3vw,2.4rem);font-weight:400;letter-spacing:.04em;
+}
+.hero__phase .num{color:var(--red);font-weight:600}
+.hero__sub{
+  margin-top:1.4rem;font-size:clamp(.85rem,1.6vw,1.05rem);letter-spacing:.26em;
+  text-transform:uppercase;font-weight:400;opacity:.95;
+}
+.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem 2.4rem;margin-top:2.4rem}
+.hero__price{display:flex;flex-direction:column}
+.hero__price .lbl{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;opacity:.75}
+.hero__price .val{font-family:var(--font-serif);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:500}
+.hero__price .val small{font-size:.55em;opacity:.8;font-weight:400}
+.hero__actions{display:flex;flex-wrap:wrap;gap:1rem}
+.play-inline{display:inline-flex;align-items:center;gap:.7rem;cursor:pointer;color:#fff;
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;font-family:var(--font-sans);font-weight:500;transition:.3s}
+.play-inline:hover{color:var(--red)}
+.play-inline .ring{width:44px;height:44px;border:1px solid rgba(255,255,255,.6);border-radius:50%;display:grid;place-items:center;transition:.4s var(--ease)}
+.play-inline:hover .ring{background:var(--red);border-color:var(--red);transform:scale(1.08)}
+.scroll-cue{position:absolute;left:50%;bottom:1.8rem;transform:translateX(-50%);z-index:2;
+  font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.7);display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.scroll-cue .bar{width:1px;height:44px;background:linear-gradient(#fff,transparent);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============================================================
+   MARQUEE STAT STRIP
+   ============================================================ */
+.stats{background:var(--ink);color:#fff;padding:clamp(3rem,5vw,4rem) 0}
+.stats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stat{text-align:center;position:relative}
+.stat:not(:last-child)::after{content:"";position:absolute;right:-1rem;top:15%;height:70%;width:1px;background:rgba(255,255,255,.14)}
+.stat__num{font-family:var(--font-serif);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500;line-height:1;color:#fff}
+.stat__num .u{color:var(--red);font-size:.5em;vertical-align:super;margin-left:.1em}
+.stat__lbl{margin-top:.7rem;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+.intro{background:var(--paper)}
+.intro__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.intro__title{font-size:clamp(2.3rem,4.4vw,3.7rem);color:var(--ink);margin-bottom:.4rem}
+.intro__title em{font-style:italic;color:var(--red);font-weight:400}
+.intro p{color:var(--ink-soft);margin-top:1.4rem;font-size:1.06rem}
+.intro__aside{position:relative}
+.intro__aside img{width:100%;border-radius:2px;box-shadow:var(--shadow-md)}
+.intro__badge{position:absolute;left:-1.5rem;bottom:-1.5rem;background:#fff;padding:1.5rem 1.8rem;box-shadow:var(--shadow-md);border-top:3px solid var(--red)}
+.intro__badge .b-num{font-family:var(--font-serif);font-size:2.4rem;font-weight:600;line-height:1;color:var(--ink)}
+.intro__badge .b-lbl{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:.35rem}
+.cjk{font-family:var(--font-serif);color:var(--red);font-size:1.3em;letter-spacing:.1em}
+
+/* ============================================================
+   VIDEO
+   ============================================================ */
+.film{background:linear-gradient(180deg,#14171b,#0d0f12);color:#fff}
+.film__head{text-align:center;margin-bottom:clamp(2.2rem,4vw,3.4rem)}
+.film__head .kicker{color:var(--red)}
+.film__head h2{color:#fff;margin-top:1rem;font-size:clamp(2.2rem,5vw,3.8rem)}
+.film__head p{color:rgba(255,255,255,.6);margin:1rem auto 0;max-width:46ch}
+.film__stage{position:relative;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:16/9;background:#000}
+.film__stage video{width:100%;height:100%;object-fit:cover;display:block}
+.film__poster{position:absolute;inset:0;cursor:pointer;z-index:3}
+.film__poster img{width:100%;height:100%;object-fit:cover}
+.film__poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.45))}
+.film__play{position:absolute;inset:0;display:grid;place-items:center;z-index:4;pointer-events:none}
+.film__play .disc{width:clamp(70px,9vw,104px);height:clamp(70px,9vw,104px);border-radius:50%;
+  background:rgba(225,46,20,.92);display:grid;place-items:center;box-shadow:0 20px 60px -10px rgba(225,46,20,.7);transition:.5s var(--ease)}
+.film__poster:hover ~ .film__play .disc{transform:scale(1.09);background:var(--red)}
+.film__play .disc::before{content:"";width:0;height:0;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent #fff;margin-left:6px}
+.film__play .rings{position:absolute;width:clamp(70px,9vw,104px);height:clamp(70px,9vw,104px);border-radius:50%;border:1px solid rgba(255,255,255,.5);animation:ripple 2.6s var(--ease) infinite}
+@keyframes ripple{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.1);opacity:0}}
+.film__cap{position:absolute;left:1.8rem;bottom:1.6rem;z-index:4;pointer-events:none}
+.film__cap .t{font-family:var(--font-serif);font-size:1.6rem;font-weight:500}
+.film__cap .s{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;opacity:.8}
+
+/* ============================================================
+   HIGHLIGHTS
+   ============================================================ */
+.highlights{background:var(--paper-2)}
+.hl__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;margin-top:3.2rem}
+.hl__card{background:#fff;padding:2.4rem 1.6rem;text-align:center;box-shadow:var(--shadow-sm);
+  transition:.5s var(--ease);border-bottom:2px solid transparent}
+.hl__card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-bottom-color:var(--red)}
+.hl__icon{width:56px;height:56px;margin:0 auto 1.3rem;color:var(--red)}
+.hl__icon svg{width:100%;height:100%;stroke:var(--red);stroke-width:1.3;fill:none}
+.hl__card h3{font-size:1.28rem;color:var(--ink);margin-bottom:.5rem;font-weight:600}
+.hl__card p{font-size:.86rem;color:var(--muted);line-height:1.5}
+
+/* ============================================================
+   RESIDENCES
+   ============================================================ */
+.res{background:var(--paper)}
+.res__hero{position:relative;margin-top:3rem;border-radius:3px;overflow:hidden;box-shadow:var(--shadow-md)}
+.res__hero img{width:100%;display:block}
+.res__hero .tag{position:absolute;top:1.4rem;left:1.4rem;background:rgba(255,255,255,.92);padding:.6rem 1.1rem;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.res__cards{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:1.6rem}
+.res__card{background:#fff;padding:clamp(2rem,3.5vw,3rem);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;transition:.5s var(--ease)}
+.res__card:hover{box-shadow:var(--shadow-md)}
+.res__card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.res__card:hover::before{transform:scaleX(1)}
+.res__card .type{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--red);font-weight:500}
+.res__card h3{font-size:2rem;color:var(--ink);margin:.4rem 0 1.5rem;font-weight:500}
+.res__specs{display:flex;gap:1.8rem;margin-bottom:1.6rem}
+.res__spec{display:flex;align-items:center;gap:.55rem}
+.res__spec svg{width:22px;height:22px;stroke:var(--ink-soft);stroke-width:1.4;fill:none}
+.res__spec b{font-family:var(--font-serif);font-size:1.5rem;font-weight:600}
+.res__area{border-top:1px solid var(--line);padding-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.res__area .k{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.res__area .v{font-family:var(--font-serif);font-size:1.35rem;color:var(--ink);font-weight:500;margin-top:.2rem}
+.res__area .v small{font-size:.6em;color:var(--muted)}
+
+/* ============================================================
+   FLOOR PLANS
+   ============================================================ */
+.plans{background:var(--cream)}
+.plans__tabs{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:2.8rem}
+.plans__tab{
+  font-family:var(--font-sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  padding:.85rem 1.5rem;background:transparent;border:1px solid var(--line);color:var(--ink-soft);
+  cursor:pointer;transition:.4s var(--ease);border-radius:2px;
+}
+.plans__tab:hover{border-color:var(--ink)}
+.plans__tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.plans__stage{margin-top:2.6rem;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,4rem);align-items:center;
+  background:#fff;padding:clamp(1.6rem,3vw,3rem);box-shadow:var(--shadow-md);min-height:420px}
+.plans__viewer{position:relative;text-align:center}
+.plans__viewer img{max-height:520px;width:auto;margin:0 auto;cursor:zoom-in;transition:.5s var(--ease)}
+.plans__zoomhint{position:absolute;right:0;bottom:0;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:.4rem}
+.plans__info .kicker{color:var(--red)}
+.plans__info h3{font-size:2rem;color:var(--ink);margin:.6rem 0 .3rem;font-weight:500}
+.plans__info .sub{font-size:.9rem;color:var(--muted);letter-spacing:.06em;margin-bottom:1.4rem}
+.plans__rooms{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.2rem;margin-top:1rem}
+.plans__rooms li{font-size:.9rem;color:var(--ink-soft);display:flex;align-items:center;gap:.6rem}
+.plans__rooms li::before{content:"";width:5px;height:5px;background:var(--red);border-radius:50%;flex:none}
+.plans__meta{display:flex;gap:2rem;margin-top:1.8rem;border-top:1px solid var(--line);padding-top:1.4rem}
+.plans__meta .k{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.plans__meta .v{font-family:var(--font-serif);font-size:1.4rem;color:var(--ink);font-weight:500}
+.plans__meta .v small{font-size:.55em;color:var(--muted)}
+
+/* ============================================================
+   SPECIFICATIONS
+   ============================================================ */
+.specs{background:var(--paper)}
+.specs__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(2rem,5vw,5rem);margin-top:3rem}
+.spec-row{display:grid;grid-template-columns:34% 1fr;gap:1.2rem;padding:1.15rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.spec-row .sk{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:500}
+.spec-row .sv{font-size:.94rem;color:var(--ink-soft);line-height:1.55}
+
+/* ============================================================
+   LOCATION
+   ============================================================ */
+.loc{background:var(--ink);color:#fff}
+.loc__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.loc__map{position:relative;border-radius:3px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.loc__map img{width:100%;display:block}
+.loc__head .kicker{color:var(--red)}
+.loc__head h2{color:#fff;font-size:clamp(2.2rem,4.6vw,3.4rem);margin:1rem 0}
+.loc__head p{color:rgba(255,255,255,.62);max-width:44ch}
+.loc__points{list-style:none;margin-top:2rem;display:grid;gap:1rem}
+.loc__points li{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.loc__points .pin{width:34px;height:34px;flex:none;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:grid;place-items:center;color:var(--red)}
+.loc__points .pin svg{width:16px;height:16px;stroke:var(--red);stroke-width:1.6;fill:none}
+.loc__points .pt-t{color:#fff;font-weight:400;font-size:1rem}
+.loc__points .pt-s{color:rgba(255,255,255,.5);font-size:.8rem;letter-spacing:.04em}
+
+/* ============================================================
+   ENQUIRE
+   ============================================================ */
+.enq{background:var(--paper-2)}
+.enq__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem)}
+.enq__head h2{font-size:clamp(2.2rem,4.6vw,3.4rem);color:var(--ink);margin:1rem 0}
+.enq__head p{color:var(--ink-soft);max-width:40ch;margin-bottom:2.2rem}
+.dev-card{background:var(--ink);color:#fff;padding:2.4rem;border-radius:3px}
+.dev-card .d-brand{display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem}
+.dev-card .d-mark{width:52px;height:52px;background:var(--red);display:grid;place-items:center;flex:none}
+.dev-card .d-mark img{width:40px}
+.dev-card .d-name{font-family:var(--font-serif);font-size:1.35rem;font-weight:600;letter-spacing:.04em}
+.dev-card .d-reg{font-size:.66rem;letter-spacing:.1em;color:rgba(255,255,255,.5)}
+.dev-card .d-row{display:flex;gap:.9rem;padding:.85rem 0;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem;color:rgba(255,255,255,.82)}
+.dev-card .d-row svg{width:18px;height:18px;flex:none;stroke:var(--red);stroke-width:1.5;fill:none;margin-top:2px}
+.dev-card .d-row a:hover{color:var(--red)}
+.dev-card .d-phones{font-family:var(--font-serif);font-size:1.55rem;font-weight:600;letter-spacing:.02em;line-height:1.35}
+.form{background:#fff;padding:clamp(1.8rem,3.5vw,2.8rem);box-shadow:var(--shadow-md)}
+.form h3{font-size:1.5rem;color:var(--ink);margin-bottom:.4rem;font-weight:500}
+.form p.fh{font-size:.85rem;color:var(--muted);margin-bottom:1.6rem}
+.field{margin-bottom:1.15rem}
+.field label{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.field input,.field select,.field textarea{
+  width:100%;padding:.85rem 1rem;border:1px solid var(--line);background:var(--paper);
+  font-family:var(--font-sans);font-size:.92rem;font-weight:300;color:var(--ink);border-radius:2px;transition:.3s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red);background:#fff;box-shadow:0 0 0 3px rgba(225,46,20,.08)}
+.field.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form .btn{width:100%;justify-content:center;margin-top:.5rem}
+.form__ok{display:none;text-align:center;padding:2rem 0}
+.form__ok.show{display:block;animation:fade .6s var(--ease)}
+.form__ok .ck{width:64px;height:64px;margin:0 auto 1.2rem;border-radius:50%;background:var(--red);display:grid;place-items:center}
+.form__ok .ck svg{width:30px;height:30px;stroke:#fff;stroke-width:2.5;fill:none}
+.form__ok h3{color:var(--ink)}
+.form__ok p{color:var(--muted);margin-top:.5rem;font-size:.92rem}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:#111316;color:rgba(255,255,255,.6);padding:4rem 0 2.5rem}
+.footer__top{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer__brand{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.footer__brand .fm{width:44px;height:44px;background:var(--red);display:grid;place-items:center;flex:none}
+.footer__brand .fm img{width:34px}
+.footer__brand .fn{font-family:var(--font-serif);color:#fff;font-size:1.4rem;letter-spacing:.12em;font-weight:600}
+.footer__brand .fs{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.footer p.about{font-size:.9rem;max-width:48ch;line-height:1.7}
+.footer__links{display:flex;flex-direction:column;gap:.7rem}
+.footer__links a{font-size:.85rem;letter-spacing:.06em;transition:.3s}
+.footer__links a:hover{color:var(--red)}
+.footer__legal{font-size:.68rem;line-height:1.9;color:rgba(255,255,255,.42);margin-top:2rem}
+.footer__legal b{color:rgba(255,255,255,.6);font-weight:400}
+.footer__base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:2rem;font-size:.72rem;color:rgba(255,255,255,.4)}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(10,10,12,.94);display:none;place-items:center;padding:3vw;cursor:zoom-out}
+.lightbox.open{display:grid;animation:fade .35s var(--ease)}
+.lightbox img{max-width:94vw;max-height:92vh;box-shadow:var(--shadow-lg)}
+.lightbox__close{position:absolute;top:1.5rem;right:1.8rem;color:#fff;font-size:2rem;cursor:pointer;line-height:1;opacity:.8;transition:.3s}
+.lightbox__close:hover{opacity:1;transform:rotate(90deg)}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(38px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:1024px){
+  .hl__grid{grid-template-columns:repeat(2,1fr)}
+  .plans__stage{grid-template-columns:1fr}
+  .plans__viewer img{max-height:440px}
+}
+@media(max-width:860px){
+  .nav__links,.nav__cta{display:none}
+  .nav__burger{display:flex}
+  .nav__links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:rgba(250,248,244,.98);backdrop-filter:blur(14px);padding:1rem 0;box-shadow:var(--shadow-md)}
+  .nav__links.open a{color:var(--ink);padding:1rem clamp(1.2rem,4vw,3rem);width:100%;letter-spacing:.14em}
+  .intro__grid,.res__cards,.enq__grid,.loc__grid,.footer__top{grid-template-columns:1fr}
+  .specs__grid{grid-template-columns:1fr}
+  .stats__grid{grid-template-columns:repeat(2,1fr);gap:2.5rem 1rem}
+  .stat:nth-child(2)::after{display:none}
+  .intro__aside{order:-1}
+  .loc__head{order:-1}
+}
+@media(max-width:560px){
+  .hl__grid{grid-template-columns:1fr}
+  .field.two{grid-template-columns:1fr}
+  .footer__base{flex-direction:column}
+  .hero__meta{gap:1.4rem}
+  .res__area{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Vision Garden home">
+    <span class="brand__mark"><img src="assets/images/logo.png" alt="Vision Garden logo"/></span>
+    <span class="brand__txt">
+      <span class="brand__name">VISION GARDEN</span>
+      <span class="brand__sub">築夢園 · Phase 5</span>
+    </span>
+  </a>
+  <div class="nav__links" id="navLinks">
+    <a href="#film">The Film</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#residences">Residences</a>
+    <a href="#plans">Floor Plans</a>
+    <a href="#specs">Specifications</a>
+    <a href="#location">Location</a>
+    <a href="#enquire" class="nav__cta" style="display:inline-block">Register Interest</a>
+  </div>
+  <div class="nav__burger" id="burger" aria-label="Menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero__bg"><img src="assets/images/hero_exterior.webp" alt="Vision Garden Phase 5 double storey terrace houses street view"/></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__inner">
+    <p class="kicker hero__kicker">Taman Wawasan Mahandoi · Donggongon, <span>Penampang</span></p>
+    <h1>Vision <em>Garden</em></h1>
+    <div class="hero__phase"><span class="num">Phase&nbsp;5</span><span>·</span><span>Double Storey Terrace Houses</span></div>
+    <p class="hero__sub">A limited collection of 43 homes</p>
+    <div class="hero__meta">
+      <div class="hero__price">
+        <span class="lbl">Priced from</span>
+        <span class="val">RM 838,000 <small>— RM 990,000</small></span>
+      </div>
+      <div class="hero__actions">
+        <a href="#enquire" class="btn btn--solid">Register Interest</a>
+        <button class="play-inline" data-scroll="#film">
+          <span class="ring"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span>
+          Watch the film
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="bar"></span></div>
+</header>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+  <div class="container">
+    <div class="stats__grid">
+      <div class="stat reveal"><div class="stat__num" data-count="43">43</div><div class="stat__lbl">Exclusive Units</div></div>
+      <div class="stat reveal d1"><div class="stat__num" data-count="4">4</div><div class="stat__lbl">Bedrooms</div></div>
+      <div class="stat reveal d2"><div class="stat__num" data-count="20">20<span class="u">ft</span></div><div class="stat__lbl">House Frontage</div></div>
+      <div class="stat reveal d3"><div class="stat__num" data-count="99">99<span class="u">yrs</span></div><div class="stat__lbl">Leasehold Tenure</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section class="section intro" id="about">
+  <div class="container">
+    <div class="intro__grid">
+      <div class="reveal">
+        <div class="eyebrow-row"><span class="rule"></span><span class="kicker">The Development</span></div>
+        <h2 class="intro__title">Where every home is a <em>vision realised</em>.</h2>
+        <p>Perched on the gentle rise of Taman Wawasan Mahandoi in Donggongon, Penampang, <strong>Vision Garden <span class="cjk">築夢園</span></strong> is a masterplanned community that has grown, phase by phase, into one of the district's most sought-after addresses.</p>
+        <p>Phase 5 crowns the development with just <strong>43 double storey terrace houses</strong> — architecturally sculpted gable roofs, generous 20-foot frontages, and light-filled interiors designed for the way modern Sabahan families truly live. Moments from the Pan Borneo Highway, yet wrapped in green.</p>
+        <div style="margin-top:2rem"><a href="#residences" class="btn btn--line">Explore the Residences</a></div>
+      </div>
+      <div class="intro__aside reveal d2">
+        <img src="assets/images/cutaway_3d.webp" alt="Architectural cutaway showing interior layout of a Vision Garden terrace house"/>
+        <div class="intro__badge">
+          <div class="b-num">2,063<span style="font-size:.5em;vertical-align:super"> ft²</span></div>
+          <div class="b-lbl">Built-up, up to</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FILM ================= -->
+<section class="section film" id="film">
+  <div class="container">
+    <div class="film__head reveal">
+      <div class="eyebrow-row" style="justify-content:center"><span class="rule"></span><span class="kicker">The Cinematic Film</span><span class="rule"></span></div>
+      <h2>Come home to Vision Garden</h2>
+      <p>Nineteen seconds above the rooftops — see the light, the lines and the life of Phase 5 as only film can tell it.</p>
+    </div>
+    <div class="film__stage reveal d1">
+      <video id="promoVideo" preload="none" playsinline controls
+             poster="assets/images/video_poster.webp">
+        <source src="assets/video/vision-garden-promo.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+      <div class="film__poster" id="filmPoster">
+        <img src="assets/images/video_poster.webp" alt="Vision Garden promotional film preview"/>
+      </div>
+      <div class="film__play"><span class="rings"></span><span class="disc"></span></div>
+      <div class="film__cap"><div class="t">Vision Garden · Phase 5</div><div class="s">Cinematic Aerial Film</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HIGHLIGHTS ================= -->
+<section class="section highlights" id="highlights">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow-row" style="justify-content:center"><span class="rule"></span><span class="kicker">Why Phase 5</span><span class="rule"></span></div>
+      <h2 class="section-title">Designed around the details<br>that make a house a home.</h2>
+    </div>
+    <div class="hl__grid">
+      <div class="hl__card reveal">
+        <div class="hl__icon"><svg viewBox="0 0 48 48"><path d="M6 30 24 12l18 18"/><path d="M11 26v14h26V26"/><path d="M6 40h36"/></svg></div>
+        <h3>20ft Frontage</h3><p>An expansive 20-foot wide façade for grand kerb presence and light.</p>
+      </div>
+      <div class="hl__card reveal d1">
+        <div class="hl__icon"><svg viewBox="0 0 48 48"><rect x="7" y="20" width="34" height="18" rx="2"/><path d="M7 26h34"/><path d="M13 20v-4a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v4M25 20v-4a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v4"/></svg></div>
+        <h3>4 Bed · 3 Bath</h3><p>Four bedrooms and three bathrooms — room for the whole family to grow.</p>
+      </div>
+      <div class="hl__card reveal d2">
+        <div class="hl__icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/></svg></div>
+        <h3>Sunlit Stairwell</h3><p>Natural sunlight pours through the central stairwell all day long.</p>
+      </div>
+      <div class="hl__card reveal d3">
+        <div class="hl__icon"><svg viewBox="0 0 48 48"><path d="M8 40V14l16-8 16 8v26"/><path d="M8 22h32M8 31h32"/><path d="M24 6v34"/></svg></div>
+        <h3>Tall Ceilings</h3><p>Spacious interiors with lofty ceiling heights for an airy, open feel.</p>
+      </div>
+      <div class="hl__card reveal d4">
+        <div class="hl__icon"><svg viewBox="0 0 48 48"><path d="M9 34l3-11a4 4 0 0 1 3.8-2.8h16.4A4 4 0 0 1 36 23l3 11"/><path d="M6 34h36v6H6zM12 40v3M36 40v3"/><circle cx="14" cy="34" r="2"/><circle cx="34" cy="34" r="2"/></svg></div>
+        <h3>Parks 3 Cars</h3><p>Corner units offer a driveway generous enough for up to three cars.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESIDENCES ================= -->
+<section class="section res" id="residences">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow-row"><span class="rule"></span><span class="kicker">The Residences</span></div>
+      <h2 class="section-title">Two ways to call it home.</h2>
+    </div>
+    <div class="res__hero reveal d1">
+      <span class="tag">Artist's Impression · Phase 5 Streetscape</span>
+      <img src="assets/images/hero_exterior.webp" alt="Row of Vision Garden Phase 5 terrace houses"/>
+    </div>
+    <div class="res__cards">
+      <div class="res__card reveal">
+        <span class="type">Intermediate Unit</span>
+        <h3>The Terrace</h3>
+        <div class="res__specs">
+          <span class="res__spec"><svg viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="9" rx="1"/><path d="M3 13h18M6 10V8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M12 10V8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg><b>4</b></span>
+          <span class="res__spec"><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M6 12V6a2 2 0 0 1 2-2 2 2 0 0 1 2 2"/></svg><b>3</b></span>
+          <span class="res__spec"><svg viewBox="0 0 24 24"><path d="M5 17l1.5-5A2 2 0 0 1 8.4 10.6h7.2A2 2 0 0 1 17.5 12L19 17"/><path d="M3 17h18v2H3zM7 12h10"/></svg><b>2</b></span>
+        </div>
+        <div class="res__area">
+          <div><div class="k">Land Area</div><div class="v">1,330 <small>ft²</small></div></div>
+          <div><div class="k">Built-up Area</div><div class="v">1,946–1,950 <small>ft²</small></div></div>
+        </div>
+      </div>
+      <div class="res__card reveal d2">
+        <span class="type">Corner Unit</span>
+        <h3>The Garden Corner</h3>
+        <div class="res__specs">
+          <span class="res__spec"><svg viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="9" rx="1"/><path d="M3 13h18M6 10V8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M12 10V8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg><b>4</b></span>
+          <span class="res__spec"><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M6 12V6a2 2 0 0 1 2-2 2 2 0 0 1 2 2"/></svg><b>3</b></span>
+          <span class="res__spec"><svg viewBox="0 0 24 24"><path d="M5 17l1.5-5A2 2 0 0 1 8.4 10.6h7.2A2 2 0 0 1 17.5 12L19 17"/><path d="M3 17h18v2H3zM7 12h10"/></svg><b>3</b></span>
+        </div>
+        <div class="res__area">
+          <div><div class="k">Land Area</div><div class="v">2,006–2,805 <small>ft²</small></div></div>
+          <div><div class="k">Built-up Area</div><div class="v">2,063 <small>ft²</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FLOOR PLANS ================= -->
+<section class="section plans" id="plans">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow-row" style="justify-content:center"><span class="rule"></span><span class="kicker">Floor Plans</span><span class="rule"></span></div>
+      <h2 class="section-title">Every square foot, considered.</h2>
+    </div>
+    <div class="plans__tabs reveal d1" id="planTabs">
+      <button class="plans__tab active" data-plan="ig">Intermediate · Ground</button>
+      <button class="plans__tab" data-plan="tf">Intermediate · First (Type F)</button>
+      <button class="plans__tab" data-plan="tg">Intermediate · First (Type G)</button>
+      <button class="plans__tab" data-plan="cg">Corner · Ground</button>
+      <button class="plans__tab" data-plan="cf">Corner · First</button>
+    </div>
+    <div class="plans__stage reveal d1">
+      <div class="plans__viewer">
+        <img id="planImg" src="assets/images/plan_intermediate_ground.webp" alt="Floor plan"/>
+        <span class="plans__zoomhint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg>Click to enlarge</span>
+      </div>
+      <div class="plans__info">
+        <span class="kicker" id="planKicker">Intermediate Unit</span>
+        <h3 id="planTitle">Ground Floor Plan</h3>
+        <div class="sub" id="planSub">The everyday heart of the home</div>
+        <ul class="plans__rooms" id="planRooms"></ul>
+        <div class="plans__meta" id="planMeta"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SPECIFICATIONS ================= -->
+<section class="section specs" id="specs">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow-row"><span class="rule"></span><span class="kicker">Building Specifications</span></div>
+      <h2 class="section-title">Built to a standard you can feel.</h2>
+    </div>
+    <div class="specs__grid" id="specGrid"></div>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="section loc" id="location">
+  <div class="container">
+    <div class="loc__grid">
+      <div class="loc__map reveal">
+        <img src="assets/images/aerial_masterplan.webp" alt="Aerial masterplan of Vision Garden showing all phases and Pan Borneo Highway"/>
+      </div>
+      <div class="loc__head reveal d1">
+        <div class="eyebrow-row"><span class="rule"></span><span class="kicker">The Location</span></div>
+        <h2>Connected, yet<br>cradled in green.</h2>
+        <p>A thriving masterplan in Donggongon, Penampang — with the Pan Borneo Highway at your doorstep and the amenities of Kota Kinabalu within easy reach.</p>
+        <ul class="loc__points">
+          <li>
+            <span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><div class="pt-t">Taman Wawasan Mahandoi</div><div class="pt-s">Donggongon, Penampang, Sabah</div></div>
+          </li>
+          <li>
+            <span class="pin"><svg viewBox="0 0 24 24"><path d="M4 17h16M6 17V9l6-4 6 4v8"/><path d="M4 17l2 3M20 17l-2 3"/></svg></span>
+            <div><div class="pt-t">Pan Borneo Highway</div><div class="pt-s">Direct connectivity, minutes away</div></div>
+          </li>
+          <li>
+            <span class="pin"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M8 8V5h8v3M8 20v-6h8v6"/></svg></span>
+            <div><div class="pt-t">An Established Community</div><div class="pt-s">Alongside completed Phases 1, 2 &amp; 3A</div></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENQUIRE ================= -->
+<section class="section enq" id="enquire">
+  <div class="container">
+    <div class="enq__grid">
+      <div class="enq__head reveal">
+        <div class="eyebrow-row"><span class="rule"></span><span class="kicker">Register Your Interest</span></div>
+        <h2>Your dream home<br>awaits.</h2>
+        <p>Leave your details and our sales team will be in touch with pricing, availability and a private viewing of the Phase 5 show unit.</p>
+        <div class="dev-card">
+          <div class="d-brand">
+            <span class="d-mark"><img src="assets/images/logo.png" alt="Vision Garden"/></span>
+            <div><div class="d-name">Sri Moraine Sdn Bhd</div><div class="d-reg">(187177-X) · Developer</div></div>
+          </div>
+          <div class="d-row">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>5th Floor Penthouse, Wisma Prudential, Luyang, Jalan Lintas, 88300 Kota Kinabalu, Sabah</span>
+          </div>
+          <div class="d-row">
+            <svg viewBox="0 0 24 24"><path d="M4 5c0 9 6 15 15 15l1.5-3.5-4-2-1.8 1.8a12 12 0 0 1-5-5L7.5 9.5l-2-4z"/></svg>
+            <span class="d-phones"><a href="tel:+6088255555">(088) 255 555</a><br><a href="tel:+60178675455">(017) 867 5455</a></span>
+          </div>
+          <div class="d-row">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+            <span><a href="https://www.thevisiongarden.com" target="_blank" rel="noopener">www.thevisiongarden.com</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <form class="form" id="enqForm" novalidate>
+          <div id="formBody">
+            <h3>Request Information</h3>
+            <p class="fh">Fields marked with * are required.</p>
+            <div class="field"><label for="f-name">Full Name *</label><input id="f-name" name="name" type="text" required placeholder="e.g. Amelia Tan"/></div>
+            <div class="field two">
+              <div><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" required placeholder="+60 12 345 6789"/></div>
+              <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@email.com"/></div>
+            </div>
+            <div class="field"><label for="f-unit">Unit of Interest</label>
+              <select id="f-unit" name="unit">
+                <option value="Intermediate Unit">Intermediate Unit — from RM 838,000</option>
+                <option value="Corner Unit">Corner Unit — up to RM 990,000</option>
+                <option value="Not sure yet">Not sure yet — advise me</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="3" placeholder="I'd love to arrange a show unit viewing…"></textarea></div>
+            <button type="submit" class="btn btn--solid">Send Enquiry</button>
+          </div>
+          <div class="form__ok" id="formOk">
+            <div class="ck"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg></div>
+            <h3>Thank you!</h3>
+            <p>Your enquiry has been noted. Our team will reach out to you shortly.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">
+          <span class="fm"><img src="assets/images/logo.png" alt="Vision Garden"/></span>
+          <div><div class="fn">VISION GARDEN</div><div class="fs">築夢園 · Phase 5</div></div>
+        </div>
+        <p class="about">A masterplanned community of double storey terrace houses in Taman Wawasan Mahandoi, Donggongon, Penampang, Sabah — thoughtfully developed by Sri Moraine Sdn Bhd.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#film">The Film</a>
+        <a href="#residences">The Residences</a>
+        <a href="#plans">Floor Plans</a>
+        <a href="#specs">Specifications</a>
+        <a href="#location">Location</a>
+        <a href="#enquire">Register Interest</a>
+      </div>
+    </div>
+    <p class="footer__legal">
+      <b>Developer's Licence No.:</b> 800-1/1/953/02619 &nbsp;|&nbsp; <b>Advertisement Permit No.:</b> 800-1/1/953/02611 &nbsp;|&nbsp; <b>Validity Period:</b> 24.10.2025 – 20.10.2030 &nbsp;|&nbsp; <b>Land Tenure:</b> Leasehold for 99 years &nbsp;|&nbsp; <b>Expected Date of Completion:</b> 24 months from the Sale &amp; Purchase Agreement &nbsp;|&nbsp; <b>Authority Approving Development &amp; Building Plans:</b> Majlis Daerah Penampang &nbsp;|&nbsp; <b>Number of units:</b> 43 (Phase 5) &nbsp;|&nbsp; <b>Selling Price:</b> RM 838,000.00 – RM 990,000.00 &nbsp;|&nbsp; All monies including deposit / booking fee must be paid into Housing Development Account No. 21010300048964 with RHB Bank Berhad &nbsp;|&nbsp; 30% Bumiputra reserved with 5% discount.
+      <br><br>The information contained in this material is subject to change and shall not constitute and/or be treated as an offer or contract. All images are artist's impressions.
+    </p>
+    <div class="footer__base">
+      <span>© 2025 Sri Moraine Sdn Bhd. All rights reserved.</span>
+      <span>Kota Kinabalu, Sabah · Malaysia</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox__close" id="lbClose">&times;</span>
+  <img id="lbImg" src="" alt="Enlarged floor plan"/>
+</div>
+
+<script>
+/* ---------- data ---------- */
+const PLANS = {
+  ig:{img:'plan_intermediate_ground.webp',kicker:'Intermediate Unit',title:'Ground Floor Plan',sub:'The everyday heart of the home',
+      rooms:['Living Area','Dining Area','Dry Kitchen','Wet Kitchen','Guest Room','Bath 1','Car Porch','Rear Yard'],
+      meta:[['Land Area','1,330 <small>ft²</small>'],['Built-up','1,946–1,950 <small>ft²</small>']]},
+  tf:{img:'plan_typeF.webp',kicker:'Intermediate · Type F',title:'First Floor Plan',sub:'Four bedrooms, private and quiet',
+      rooms:['Master Bedroom','Bedroom 1','Bedroom 2','Bath 2','Bath 3'],
+      meta:[['Bedrooms','4'],['Bathrooms','3']]},
+  tg:{img:'plan_typeG.webp',kicker:'Intermediate · Type G',title:'First Floor Plan',sub:'With a private balcony retreat',
+      rooms:['Master Bedroom','Bedroom 1','Bedroom 2','Bath 2','Bath 3','Balcony'],
+      meta:[['Bedrooms','4'],['Bathrooms','3']]},
+  cg:{img:'plan_corner_ground.webp',kicker:'Corner Unit',title:'Ground Floor Plan',sub:'Expanded living on a wider lot',
+      rooms:['Living Area','Dining Area','Dry Kitchen','Wet Kitchen','Guest Room','Bath 1','Car Porch','Side Garden'],
+      meta:[['Land Area','2,006–2,805 <small>ft²</small>'],['Built-up','2,063 <small>ft²</small>']]},
+  cf:{img:'plan_corner_first.webp',kicker:'Corner Unit',title:'First Floor Plan',sub:'Master suite with balcony',
+      rooms:['Master Bedroom','Bedroom 1','Bedroom 2','Bath 2','Bath 3','Balcony'],
+      meta:[['Bedrooms','4'],['Parking','3 Cars']]},
+};
+const SPECS = [
+  ['Structure','Reinforced concrete framework'],
+  ['Walls','Brick / reinforced concrete / lightweight block walls'],
+  ['Roof','Pre-painted metal roofing sheets and / or RC roof slabs'],
+  ['Ceiling Finishes','Cement rendered / skim coat / plaster or gypsum ceiling board'],
+  ['Floor Finishes','Living, dining, dry kitchen, bathrooms &amp; balcony — ceramic tiles. Bedrooms, family area &amp; staircase — timber flooring. Car porch &amp; yard — cement rendered.'],
+  ['Wall Finishes','Dry kitchen — 1500mm high ceramic tiles. Bathrooms — 2100mm high ceramic tiles. Others — emulsion paint on cement plaster.'],
+  ['Kitchen','Single bowl stainless steel sink with one water tap'],
+  ['Windows','Aluminium framed with glass to all fixed / sliding / casement / top hung windows'],
+  ['Doors','Timber door / plywood flush door / aluminium framed with glass doors'],
+  ['Plumbing','JKR&rsquo;s standard sanitary and plumbing installation'],
+  ['Electrical','All electrical installation to SESB&rsquo;s standard'],
+  ['Fencing','M.S. front gate / brick wall with cement siding boards'],
+];
+
+/* ---------- render specs ---------- */
+document.getElementById('specGrid').innerHTML = SPECS.map(([k,v])=>
+  `<div class="spec-row reveal"><div class="sk">${k}</div><div class="sv">${v}</div></div>`).join('');
+
+/* ---------- floor plan tabs ---------- */
+const planImg=document.getElementById('planImg');
+function setPlan(key){
+  const p=PLANS[key];
+  planImg.style.opacity=0;
+  setTimeout(()=>{
+    planImg.src='assets/images/'+p.img;
+    planImg.style.opacity=1;
+  },220);
+  document.getElementById('planKicker').textContent=p.kicker;
+  document.getElementById('planTitle').textContent=p.title;
+  document.getElementById('planSub').textContent=p.sub;
+  document.getElementById('planRooms').innerHTML=p.rooms.map(r=>`<li>${r}</li>`).join('');
+  document.getElementById('planMeta').innerHTML=p.meta.map(([k,v])=>
+    `<div><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+}
+planImg.style.transition='opacity .3s ease';
+document.querySelectorAll('.plans__tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.plans__tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    setPlan(t.dataset.plan);
+  });
+});
+setPlan('ig');
+
+/* ---------- lightbox ---------- */
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+planImg.addEventListener('click',()=>{lbImg.src=planImg.src;lb.classList.add('open');});
+function closeLb(){lb.classList.remove('open');}
+document.getElementById('lbClose').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+/* ---------- video ---------- */
+const video=document.getElementById('promoVideo'),poster=document.getElementById('filmPoster'),play=document.querySelector('.film__play');
+function startVideo(){
+  poster.style.display='none';play.style.display='none';
+  video.play().catch(()=>{});
+}
+poster.addEventListener('click',startVideo);
+video.addEventListener('pause',()=>{if(video.currentTime>0&&!video.ended){/*keep controls*/}});
+
+/* ---------- nav ---------- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+document.querySelectorAll('[data-scroll]').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelector(b.dataset.scroll).scrollIntoView({behavior:'smooth'});
+}));
+
+/* ---------- reveal on scroll ---------- */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- count up ---------- */
+const counted=new WeakSet();
+const cio=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && !counted.has(e.target)){
+      counted.add(e.target);
+      const el=e.target,target=+el.dataset.count,unit=el.querySelector('.u');
+      const uHTML=unit?unit.outerHTML:'';let n=0;const step=Math.max(1,Math.ceil(target/40));
+      const tick=()=>{n+=step;if(n>=target)n=target;el.innerHTML=n+uHTML;if(n<target)requestAnimationFrame(tick);};
+      tick();
+    }
+  });
+},{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ---------- form ---------- */
+document.getElementById('enqForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('f-name'),phone=document.getElementById('f-phone');
+  if(!name.value.trim()){name.focus();name.style.borderColor='var(--red)';return;}
+  if(!phone.value.trim()){phone.focus();phone.style.borderColor='var(--red)';return;}
+  document.getElementById('formBody').style.display='none';
+  document.getElementById('formOk').classList.add('show');
+});
+
+/* ---------- hero ready ---------- */
+addEventListener('load',()=>document.querySelector('.hero').classList.add('ready'));
+document.querySelector('.hero').classList.add('ready');
+</script>
+</body>
+</html>
