@@ -428,6 +428,53 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
 .loc__points .pt-s{color:rgba(255,255,255,.5);font-size:.8rem;letter-spacing:.04em}
 
 /* ============================================================
+   THE JOURNEY  — animated route map (KK city → Vision Garden)
+   ============================================================ */
+.journey{background:var(--paper);position:relative;overflow:hidden}
+.journey::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:46px 46px;opacity:.55;
+  -webkit-mask-image:radial-gradient(120% 92% at 50% 42%,#000,transparent 82%);
+          mask-image:radial-gradient(120% 92% at 50% 42%,#000,transparent 82%)}
+.journey .container{position:relative}
+.journey__head{text-align:center;max-width:60ch;margin-inline:auto}
+.journey__head h2{color:var(--ink);margin-top:1rem}
+.journey__head p{color:var(--ink-soft);margin:1rem auto 0;max-width:46ch}
+/* readout counters */
+.journey__meta{display:flex;justify-content:center;flex-wrap:wrap;gap:2.4rem 3.4rem;margin-top:2.6rem}
+.jm{text-align:center;position:relative}
+.jm:not(:last-child)::after{content:"";position:absolute;right:-1.7rem;top:12%;height:76%;width:1px;background:var(--line)}
+.jm .v{font-family:var(--font-serif);font-size:clamp(2.1rem,4vw,3rem);font-weight:600;line-height:1;color:var(--ink)}
+.jm .v .u{color:var(--red);font-size:.44em;vertical-align:super;margin-left:.15em;font-weight:500}
+.jm .k{margin-top:.55rem;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.jm .v small{font-size:.5em;color:var(--muted);font-weight:400;letter-spacing:.02em}
+/* the map / route */
+.journey__map{position:relative;margin-top:3rem;aspect-ratio:1000/560}
+.journey__map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.journey__map .vline,.journey__map .vfill{display:none}
+.j-base{fill:none;stroke:var(--sky-deep);stroke-width:3;stroke-linecap:round;stroke-dasharray:1 11;opacity:.6}
+.j-prog{fill:none;stroke:var(--red);stroke-width:3.5;stroke-linecap:round}
+.j-car .pulse{fill:var(--red-glow);opacity:.4;animation:jpulse 1.7s var(--ease) infinite}
+.j-car .core{fill:var(--red);stroke:#fff;stroke-width:2}
+@keyframes jpulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(3.4);opacity:0}}
+/* HTML waypoint pins overlaid on the route (rem-sized, always legible) */
+.j-node{position:absolute;transform:translate(-50%,-50%);z-index:2;display:flex;flex-direction:column;align-items:center;
+  opacity:0;transition:opacity .5s var(--ease)}
+.journey__map.in .j-node{opacity:1}
+.j-node .pin{width:15px;height:15px;border-radius:50%;background:#fff;border:2px solid var(--sky-deep);box-shadow:var(--shadow-sm);transition:.4s var(--ease);position:relative;z-index:2}
+.j-node.active .pin{border-color:var(--red);background:var(--red);transform:scale(1.15)}
+.j-node.dest .pin{width:19px;height:19px}
+.j-node .lab{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;text-align:center}
+.j-node[data-side="above"] .lab{bottom:22px}
+.j-node[data-side="below"] .lab{top:22px}
+.j-node .lab .t{display:block;font-size:.74rem;font-weight:500;letter-spacing:.05em;color:var(--ink)}
+.j-node .lab .s{display:block;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.15rem}
+.j-node.dest .lab .t{color:var(--red);font-weight:600}
+.j-node.dest .lab .t::before{content:"◆ ";font-size:.7em;vertical-align:middle}
+.journey__foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.2rem;margin-top:2.6rem}
+.journey__note{font-size:.68rem;color:var(--muted);letter-spacing:.04em;text-align:center;margin-top:1.4rem}
+
+/* ============================================================
    ENQUIRE
    ============================================================ */
 .enq{background:var(--paper-2)}
@@ -535,6 +582,25 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
   .plans__tabs::-webkit-scrollbar{display:none}
   .plans__tab{flex:none;font-size:.66rem;padding:.75rem 1.05rem}
   .plans__viewer img{max-height:380px}
+  /* journey: taller aspect so stacked labels breathe */
+  .journey__map{aspect-ratio:1000/620}
+  .j-node .lab .t{font-size:.66rem}
+  .j-node .lab .s{display:none}
+}
+@media(max-width:560px){
+  /* journey becomes a vertical timeline */
+  .journey__map{aspect-ratio:auto;min-height:0;margin-top:2.2rem;padding-left:1.4rem}
+  .journey__map svg{display:none}
+  .journey__map .vline{display:block;position:absolute;left:1.4rem;top:8px;bottom:8px;width:2px;background:var(--sky-deep);opacity:.5}
+  .journey__map .vfill{display:block;position:absolute;left:1.4rem;top:8px;width:2px;background:var(--red);height:0}
+  .j-node{position:relative;transform:none;flex-direction:row;gap:.9rem;align-items:center;margin:0 0 1.4rem;left:auto!important;top:auto!important;opacity:1}
+  .j-node .pin{margin-left:calc(1.4rem - 7px);flex:none}
+  .j-node .lab{position:static;transform:none;text-align:left}
+  .j-node[data-side] .lab{top:auto;bottom:auto}
+  .j-node .lab .t{font-size:.9rem}
+  .j-node .lab .s{display:block;font-size:.64rem}
+  .journey__meta{gap:1.6rem 2rem}
+  .jm:not(:last-child)::after{display:none}
 }
 @media(max-width:560px){
   .hl__grid{grid-template-columns:1fr}
@@ -604,6 +670,7 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
     <a href="#plans">Floor Plans</a>
     <a href="#specs">Specifications</a>
     <a href="#location">Location</a>
+    <a href="#journey">Journey</a>
     <a href="#enquire" class="nav__cta" style="display:inline-block">Register Interest</a>
   </div>
   <div class="nav__burger" id="burger" aria-label="Menu" role="button" tabindex="0">
@@ -846,6 +913,53 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
   </div>
 </section>
 
+<!-- ================= THE JOURNEY ================= -->
+<section class="section journey" id="journey" data-scene="THE JOURNEY">
+  <div class="container">
+    <div class="journey__head reveal">
+      <div class="eyebrow-row" style="justify-content:center"><span class="rule"></span><span class="kicker">The Journey</span><span class="rule"></span></div>
+      <h2 class="section-title">Minutes from the city,<br>a world of calm away.</h2>
+      <p>From the heart of Kota Kinabalu, an easy drive down Jalan Lintas brings you home to Vision Garden in Donggongon, Penampang.</p>
+    </div>
+
+    <div class="journey__meta reveal d1" id="journeyMeta">
+      <div class="jm"><div class="v"><span id="jDist">0</span> <span class="u">km</span></div><div class="k">Approx. Distance</div></div>
+      <div class="jm"><div class="v"><span id="jTime">0</span> <span class="u">min</span></div><div class="k">Approx. Drive Time</div></div>
+      <div class="jm"><div class="v" style="font-size:clamp(1.5rem,3vw,2.1rem)">Jalan&nbsp;Lintas<br><small>Route 500 · 501</small></div><div class="k">Via</div></div>
+    </div>
+
+    <!-- Route: desktop = animated curved map · mobile = vertical timeline -->
+    <div class="journey__map reveal d1" id="journeyMap">
+      <span class="vline" aria-hidden="true"></span><span class="vfill" id="vFill" aria-hidden="true"></span>
+      <svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+        <path class="j-base" id="jRoute" d="M60 470 C 180 430 210 402 300 372 S 460 328 540 300 S 700 250 770 220 S 900 160 950 120"/>
+        <path class="j-prog" id="jProg"  d="M60 470 C 180 430 210 402 300 372 S 460 328 540 300 S 700 250 770 220 S 900 160 950 120"/>
+        <g class="j-car" id="jCar"><circle class="pulse" r="9"/><circle class="core" r="7"/></g>
+      </svg>
+      <!-- waypoint nodes (positioned by JS to sit on the route) -->
+      <div class="j-node" data-side="below" data-frac="0"    style="left:6%;top:83.9%">
+        <span class="pin"></span><span class="lab"><span class="t">Kota Kinabalu</span><span class="s">City Centre</span></span></div>
+      <div class="j-node" data-side="above" data-frac="0.30" style="left:30%;top:66.4%">
+        <span class="pin"></span><span class="lab"><span class="t">Jalan Lintas</span><span class="s">Lintas Highway</span></span></div>
+      <div class="j-node" data-side="below" data-frac="0.55" style="left:54%;top:53.6%">
+        <span class="pin"></span><span class="lab"><span class="t">ITCC Penampang</span><span class="s">Retail &amp; Dining</span></span></div>
+      <div class="j-node" data-side="above" data-frac="0.80" style="left:77%;top:39.3%">
+        <span class="pin"></span><span class="lab"><span class="t">Donggongon Town</span><span class="s">Penampang</span></span></div>
+      <div class="j-node dest" data-side="below" data-frac="1" style="left:95%;top:21.4%">
+        <span class="pin"></span><span class="lab"><span class="t">Vision Garden</span><span class="s">Taman Wawasan Mahandoi</span></span></div>
+    </div>
+
+    <div class="journey__foot reveal d2">
+      <a class="btn btn--solid" href="https://www.google.com/maps/dir/?api=1&amp;origin=Kota+Kinabalu+City,+Sabah&amp;destination=Taman+Wawasan+Mahandoi+Vision+Garden,+Donggongon,+Penampang" target="_blank" rel="noopener">
+        Open Directions in Google Maps
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+      <a class="btn btn--line" href="#enquire">Book a Show-Unit Viewing</a>
+    </div>
+    <p class="journey__note reveal">Route, distance and travel time are approximate and indicative only, and vary with traffic and departure point.</p>
+  </div>
+</section>
+
 <!-- ================= ENQUIRE ================= -->
 <section class="section enq" id="enquire" data-scene="REGISTER INTEREST">
   <div class="container">
@@ -923,6 +1037,7 @@ body.cursor-on a,body.cursor-on button,body.cursor-on select,body.cursor-on inpu
         <a href="#plans">Floor Plans</a>
         <a href="#specs">Specifications</a>
         <a href="#location">Location</a>
+        <a href="#journey">The Journey</a>
         <a href="#enquire">Register Interest</a>
       </div>
     </div>
@@ -1192,6 +1307,73 @@ if(!COARSE && !REDUCED){
   document.addEventListener('pointerover',e=>{ if(e.target.closest(hot)) cur.classList.add('hot'); });
   document.addEventListener('pointerout',e=>{ if(e.target.closest(hot)) cur.classList.remove('hot'); });
 }
+
+/* ============================================================
+   THE JOURNEY — route animation (KK city → Vision Garden)
+   Real figures: ~11 km, ~20 min via Jalan Lintas.
+   ============================================================ */
+(function(){
+  const map=document.getElementById('journeyMap');
+  if(!map) return;
+  const route=document.getElementById('jRoute');
+  const prog=document.getElementById('jProg');
+  const car=document.getElementById('jCar');
+  const vFill=document.getElementById('vFill');
+  const jDist=document.getElementById('jDist');
+  const jTime=document.getElementById('jTime');
+  const nodes=[...map.querySelectorAll('.j-node')];
+  const TOTAL_KM=11.2, TOTAL_MIN=20, RUN=5200, HOLD=1500;
+  const len=route.getTotalLength();
+
+  // snap each waypoint exactly onto the route (desktop; overridden on mobile via CSS)
+  nodes.forEach(n=>{
+    const pt=route.getPointAtLength(parseFloat(n.dataset.frac)*len);
+    n.style.left=(pt.x/1000*100)+'%';
+    n.style.top =(pt.y/560*100)+'%';
+  });
+  // progress line as a dash we "uncover"
+  prog.style.strokeDasharray=len;
+  prog.style.strokeDashoffset=len;
+
+  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  function render(p){
+    // line + car
+    prog.style.strokeDashoffset=len*(1-p);
+    const pt=route.getPointAtLength(p*len);
+    car.setAttribute('transform',`translate(${pt.x} ${pt.y})`);
+    // mobile fill
+    if(vFill){ vFill.style.height=(p*100)+'%'; }
+    // pins
+    nodes.forEach(n=>n.classList.toggle('active', p>=parseFloat(n.dataset.frac)-0.001));
+    // counters
+    jDist.textContent=(p*TOTAL_KM).toFixed(1);
+    jTime.textContent=Math.round(p*TOTAL_MIN);
+  }
+
+  if(REDUCED){ render(1); return; }
+
+  let raf=null, phase='run', t0=null;
+  function loop(now){
+    if(t0===null) t0=now;
+    const el=now-t0;
+    if(phase==='run'){
+      const p=Math.min(1, el/RUN);
+      render(ease(p));
+      if(p>=1){ phase='hold'; t0=now; }
+    }else{ // hold at destination, then replay
+      if(el>=HOLD){ phase='run'; t0=now; render(0); }
+    }
+    raf=requestAnimationFrame(loop);
+  }
+  // only animate while the section is on screen
+  const vis=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){ if(!raf){ phase='run'; t0=null; raf=requestAnimationFrame(loop);} }
+      else{ if(raf){ cancelAnimationFrame(raf); raf=null; } }
+    });
+  },{threshold:.25});
+  vis.observe(map);
+})();
 
 /* ============================================================
    FORM
